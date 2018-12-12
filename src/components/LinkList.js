@@ -12,6 +12,7 @@ export const FEED_QUERY = gql`
   query FeedQuery($first: Int, $skip: Int) {
     links(first: $first, skip: $skip) {
       id
+      createdAt
       url
       description
       postedBy {

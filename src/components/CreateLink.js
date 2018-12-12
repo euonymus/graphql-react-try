@@ -11,6 +11,7 @@ const POST_MUTATION = gql`
       url: $url
     ) {
       id
+      createdAt
       url
       description
     }
