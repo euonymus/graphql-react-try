@@ -53,7 +53,7 @@ class CreateLink extends Component {
           update={(store, { data: { createLink } }) => {
             const first = LINKS_PER_PAGE
             const skip = 0
-            const orderBy = 'createdAt_DESC'
+            const orderBy = 'created_at'
             const data = store.readQuery({
               query: FEED_QUERY,
               variables: { first, skip, orderBy }

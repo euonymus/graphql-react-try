@@ -5,12 +5,9 @@ import gql from 'graphql-tag'
 
 import { LINKS_PER_PAGE } from '../constants'
 
-// TODO: you need to implement orderBy and count on the server side
-// query FeedQuery($first: Int, $skip: Int, $orderBy: LinkOrderByInput) {
-//   links(first: $first, skip: $skip, orderBy: $orderBy) {
 export const FEED_QUERY = gql`
-  query FeedQuery($first: Int, $skip: Int) {
-    links(first: $first, skip: $skip) {
+  query FeedQuery($first: Int, $skip: Int, $orderBy: String) {
+    links(first: $first, skip: $skip, orderBy: $orderBy) {
       id
       createdAt
       url
@@ -31,6 +28,7 @@ export const FEED_QUERY = gql`
         }
       }
     }
+    totalCount
   }
 `
 // count
@@ -43,7 +41,7 @@ class LinkList extends Component {
 
     const skip = isNewPage ? (page - 1) * LINKS_PER_PAGE : 0
     const first = isNewPage ? LINKS_PER_PAGE : 100
-    const orderBy = isNewPage ? 'createdAt_DESC' : null
+    const orderBy = isNewPage ? 'created_at' : null
     const data = store.readQuery({
       query: FEED_QUERY,
       variables: { first, skip, orderBy }
@@ -61,7 +59,7 @@ class LinkList extends Component {
 
     const skip = isNewPage ? (page - 1) * LINKS_PER_PAGE : 0
     const first = isNewPage ? LINKS_PER_PAGE : 100
-    const orderBy = isNewPage ? 'createdAt_DESC' : null
+    const orderBy = isNewPage ? 'created_at' : null
     return { first, skip, orderBy }
   }
 
