@@ -74,7 +74,7 @@ class LinkList extends Component {
 
   _nextPage = data => {
     const page = parseInt(this.props.match.params.page, 10)
-    if (page <= data.totalCount / LINKS_PER_PAGE) {
+    if (page < data.totalCount / LINKS_PER_PAGE) {
       const nextPage = page + 1
       this.props.history.push(`/new/${nextPage}`)
     }
