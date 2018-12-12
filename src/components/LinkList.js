@@ -28,9 +28,9 @@ export const FEED_QUERY = gql`
         }
       }
     }
+    totalCount
   }
 `
-// count
 
 class LinkList extends Component {
   _updateCacheAfterVote = (store, createVote, linkId) => {
@@ -74,12 +74,10 @@ class LinkList extends Component {
 
   _nextPage = data => {
     const page = parseInt(this.props.match.params.page, 10)
-    console.log(data.links)
-    // TODO: You need to implement count query on the server side
-    // if (page <= data.count / LINKS_PER_PAGE) {
+    if (page <= data.totalCount / LINKS_PER_PAGE) {
       const nextPage = page + 1
       this.props.history.push(`/new/${nextPage}`)
-    // }
+    }
   }
 
   _previousPage = () => {
