@@ -28,7 +28,6 @@ export const FEED_QUERY = gql`
         }
       }
     }
-    totalCount
   }
 `
 // count
@@ -75,10 +74,10 @@ class LinkList extends Component {
 
   _nextPage = data => {
     const page = parseInt(this.props.match.params.page, 10)
+    console.log(data.links)
     // TODO: You need to implement count query on the server side
     // if (page <= data.count / LINKS_PER_PAGE) {
       const nextPage = page + 1
-      console.log(nextPage)
       this.props.history.push(`/new/${nextPage}`)
     // }
   }
