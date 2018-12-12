@@ -5,6 +5,7 @@ import gql from 'graphql-tag'
 
 import { LINKS_PER_PAGE } from '../constants'
 
+// TODO: you need to implement orderBy and count on the server side
 // query FeedQuery($first: Int, $skip: Int, $orderBy: LinkOrderByInput) {
 //   links(first: $first, skip: $skip, orderBy: $orderBy) {
 export const FEED_QUERY = gql`
