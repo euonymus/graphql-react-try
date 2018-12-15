@@ -9,13 +9,9 @@ const VOTE_MUTATION = gql`
     createVote(linkId: $linkId) {
       link {
         votes {
-          edges {
-            node {
               id
               user {
                 id
-              }
-            }
           }
         }
       }
@@ -54,7 +50,7 @@ class Link extends Component {
             {this.props.link.description} ({this.props.link.url})
           </div>
           <div className="f6 lh-copy gray">
-            {this.props.link.votes.edges.length} votes | by{' '}
+            {this.props.link.votes.length} votes | by{' '}
             {this.props.link.postedBy
              ? this.props.link.postedBy.username
              : 'Unknown'}{' '}

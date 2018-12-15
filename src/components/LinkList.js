@@ -17,14 +17,10 @@ export const FEED_QUERY = gql`
         username
       }
       votes {
-        edges {
-          node {
             id
             user {
               id
               username
-            }
-          }
         }
       }
     }

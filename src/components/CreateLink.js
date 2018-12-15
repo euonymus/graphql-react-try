@@ -58,7 +58,7 @@ class CreateLink extends Component {
               query: FEED_QUERY,
               variables: { first, skip, orderBy }
             })
-            data.feed.links.unshift(createLink)
+            data.links.unshift(createLink)
             store.writeQuery({
               query: FEED_QUERY,
               data,

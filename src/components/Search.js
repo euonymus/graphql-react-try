@@ -15,11 +15,7 @@ const FEED_SEARCH_QUERY = gql`
         username
       }
       votes {
-        edges {
-          node {
             id
-          }
-        }
       }
     }
   }
