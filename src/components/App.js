@@ -7,6 +7,9 @@ import CreateLink from './CreateLink'
 import Login from './Login'
 import Search from './Search'
 
+import AddQuark from './AddQuark'
+import Quarks from './Quarks'
+
 class App extends Component {
   render() {
     return (
@@ -14,12 +17,16 @@ class App extends Component {
         <Header />
         <div className="ph3 pv1 background-gray">
           <Switch>
-            <Route exact path='/' render={() => <Redirect to='/new/1' />} />
-            <Route exact path='/create' component={CreateLink} />
+            <Route exact path='/' render={() => <Redirect to='/quarks/1' />} />
             <Route exact path='/login' component={Login} />
-            <Route exact path='/search' component={Search} />
+
+            <Route exact path='/create' component={CreateLink} />
             <Route exact path='/top' component={LinkList} />
             <Route exact path='/new/:page' component={LinkList} />
+            <Route exact path='/search' component={Search} />
+
+            <Route exact path='/add-quark' component={AddQuark} />
+            <Route exact path='/quarks/:page' component={Quarks} />
           </Switch>
         </div>
       </div>
