@@ -5,8 +5,15 @@ import { FEED_QUERY } from './Quarks'
 import { QUARKS_PER_PAGE } from '../constants'
 
 const POST_MUTATION = gql`
-  mutation PostMutation($description: String!, $url: String!) {
+  mutation PostMutation(
+    $name: String!,
+    $image_path: String,
+    $description: String,
+    $url: String
+  ) {
     createQuark(
+      name: $name
+      image_path: $image_path
       description: $description
       url: $url
     ) {
@@ -17,6 +24,21 @@ const POST_MUTATION = gql`
     }
   }  
 `
+
+// start = models.DateField(null=True,blank=True)
+// end = models.DateField(null=True,blank=True)
+// start_accuracy = models.CharField(max_length=10,blank=True)
+// end_accuracy = models.CharField(max_length=10,blank=True)
+// is_momentary = models.BooleanField(default=False,blank=True)
+// affiliate = models.URLField(blank=True)
+
+// is_private = models.BooleanField(default=False,blank=True)
+// is_exclusive = models.BooleanField(default=True,blank=True)
+
+// posted_by = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, related_name='posted_quarks', on_delete=models.CASCADE)
+// last_modified_by = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, related_name='modified_quarks', on_delete=models.CASCADE)
+// quark_type = models.ForeignKey('graphql_api.QuarkType', related_name='quarks', on_delete=models.CASCADE)
+
 
 class AddQuark extends Component {
   state = {
