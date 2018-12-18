@@ -9,18 +9,6 @@ class Header extends Component {
     return (
       <div className="flex pa1 justify-between nowrap orange">
         <div className="flex flex-fixed black">
-          <Link to="/quark-types" className="ml1 no-underline black">
-            quark types
-          </Link>
-          <div className="ml1">|</div>
-          <Link to="/gluon-types" className="ml1 no-underline black">
-            gluon types
-          </Link>
-          <div className="ml1">|</div>
-          <Link to="/quark-properties" className="ml1 no-underline black">
-            quark properties
-          </Link>
-{/*
           <Link to="/" className="ml1 no-underline black">
             new
           </Link>
@@ -32,20 +20,30 @@ class Header extends Component {
           <Link to="/search" className="ml1 no-underline black">
             search
           </Link>
+{/*
+          <Link to="/quark-types" className="ml1 no-underline black">
+            quark types
+          </Link>
+          <div className="ml1">|</div>
+          <Link to="/gluon-types" className="ml1 no-underline black">
+            gluon types
+          </Link>
+          <div className="ml1">|</div>
+          <Link to="/quark-properties" className="ml1 no-underline black">
+            quark properties
+          </Link>
 */}
           {authToken && (
              <div className="flex">
-{/*
                <div className="ml1">|</div>
                <Link to="/create" className="ml1 no-underline black">
                  submit
                </Link>
                <div className="ml1">|</div>
-*/}
-               <div className="ml1">|</div>
                <Link to="/add-quark" className="ml1 no-underline black">
                  add quark
                </Link>
+{/*
                <div className="ml1">|</div>
                <Link to="/add-quark-type" className="ml1 no-underline black">
                  add quark_type
@@ -58,6 +56,7 @@ class Header extends Component {
                <Link to="/add-quark-property" className="ml1 no-underline black">
                  add quark_property
                </Link>
+*/}
              </div>
           )}
         </div>
