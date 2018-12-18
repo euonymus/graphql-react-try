@@ -42,8 +42,19 @@ const POST_MUTATION = gql`
 
 class AddQuark extends Component {
   state = {
+    name: '',
+    image_path: '',
     description: '',
+    // start: '',
+    // end: '',
+    start_accuracy: '',
+    end_accuracy: '',
+    // is_momentary: false,
     url: '',
+    affiliate: '',
+    // is_private: false,
+    // is_exclusive: true,
+    // quark_type: '',
   }
 
   render() {

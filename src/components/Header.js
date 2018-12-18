@@ -9,7 +9,10 @@ class Header extends Component {
     return (
       <div className="flex pa1 justify-between nowrap orange">
         <div className="flex flex-fixed black">
-          <div className="fw7 mr1">Hacker News</div>
+          <Link to="/quark-types" className="ml1 no-underline black">
+            quark types
+          </Link>
+{/*
           <Link to="/" className="ml1 no-underline black">
             new
           </Link>
@@ -21,15 +24,23 @@ class Header extends Component {
           <Link to="/search" className="ml1 no-underline black">
             search
           </Link>
+*/}
           {authToken && (
              <div className="flex">
+{/*
                <div className="ml1">|</div>
                <Link to="/create" className="ml1 no-underline black">
                  submit
                </Link>
                <div className="ml1">|</div>
+*/}
+               <div className="ml1">|</div>
                <Link to="/add-quark" className="ml1 no-underline black">
                  add quark
+               </Link>
+               <div className="ml1">|</div>
+               <Link to="/add-quark-type" className="ml1 no-underline black">
+                 add quark_type
                </Link>
              </div>
           )}

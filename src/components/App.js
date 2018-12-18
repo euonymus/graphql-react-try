@@ -8,7 +8,9 @@ import Login from './Login'
 import Search from './Search'
 
 import AddQuark from './AddQuark'
+import AddQuarkType from './AddQuarkType'
 import Quarks from './Quarks'
+import QuarkTypes from './QuarkTypes'
 
 class App extends Component {
   render() {
@@ -25,7 +27,10 @@ class App extends Component {
             <Route exact path='/new/:page' component={LinkList} />
             <Route exact path='/search' component={Search} />
 
+
+            <Route exact path='/quark-types' component={QuarkTypes} />
             <Route exact path='/add-quark' component={AddQuark} />
+            <Route exact path='/add-quark-type' component={AddQuarkType} />
             <Route exact path='/quarks/:page' component={Quarks} />
           </Switch>
         </div>
