@@ -10,7 +10,7 @@ class QuarkType extends Component {
         </div>
         <div className="ml1">
           <div>
-            {this.props.quark_type.name} ({this.props.quark_type.sort})
+            {this.props.quark_type.id} {this.props.quark_type.name} ({this.props.quark_type.sort})
           </div>
           <div className="f6 lh-copy gray">
             {timeDifferenceForDate(this.props.quark_type.createdAt)}

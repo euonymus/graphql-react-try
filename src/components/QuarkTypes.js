@@ -16,7 +16,8 @@ export const FEED_QUERY = gql`
 
 class QuarkTypes extends Component {
   _getQueryVariables = () => {
-    const orderBy = 'created_at'
+    const orderBy = 'id'
+    // const orderBy = 'sort'
     return { orderBy }
   }
 
