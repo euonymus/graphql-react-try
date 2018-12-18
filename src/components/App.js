@@ -10,10 +10,12 @@ import Search from './Search'
 import Quarks from './Quarks'
 import QuarkTypes from './QuarkTypes'
 import GluonTypes from './GluonTypes'
+import QuarkProperties from './QuarkProperties'
 
 import AddQuark from './AddQuark'
 import AddQuarkType from './AddQuarkType'
 import AddGluonType from './AddGluonType'
+import AddQuarkProperty from './AddQuarkProperty'
 
 
 class App extends Component {
@@ -35,9 +37,11 @@ class App extends Component {
             <Route exact path='/quarks/:page' component={Quarks} />
             <Route exact path='/quark-types' component={QuarkTypes} />
             <Route exact path='/gluon-types' component={GluonTypes} />
+            <Route exact path='/quark-properties' component={QuarkProperties} />
             <Route exact path='/add-quark' component={AddQuark} />
             <Route exact path='/add-quark-type' component={AddQuarkType} />
             <Route exact path='/add-gluon-type' component={AddGluonType} />
+            <Route exact path='/add-quark-property' component={AddQuarkProperty} />
           </Switch>
         </div>
       </div>
