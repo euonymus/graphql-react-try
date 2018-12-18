@@ -12,6 +12,10 @@ class Header extends Component {
           <Link to="/quark-types" className="ml1 no-underline black">
             quark types
           </Link>
+          <div className="ml1">|</div>
+          <Link to="/gluon-types" className="ml1 no-underline black">
+            gluon types
+          </Link>
 {/*
           <Link to="/" className="ml1 no-underline black">
             new
@@ -41,6 +45,10 @@ class Header extends Component {
                <div className="ml1">|</div>
                <Link to="/add-quark-type" className="ml1 no-underline black">
                  add quark_type
+               </Link>
+               <div className="ml1">|</div>
+               <Link to="/add-gluon-type" className="ml1 no-underline black">
+                 add gluon_type
                </Link>
              </div>
           )}

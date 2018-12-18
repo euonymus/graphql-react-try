@@ -7,10 +7,14 @@ import CreateLink from './CreateLink'
 import Login from './Login'
 import Search from './Search'
 
-import AddQuark from './AddQuark'
-import AddQuarkType from './AddQuarkType'
 import Quarks from './Quarks'
 import QuarkTypes from './QuarkTypes'
+import GluonTypes from './GluonTypes'
+
+import AddQuark from './AddQuark'
+import AddQuarkType from './AddQuarkType'
+import AddGluonType from './AddGluonType'
+
 
 class App extends Component {
   render() {
@@ -28,10 +32,12 @@ class App extends Component {
             <Route exact path='/search' component={Search} />
 
 
+            <Route exact path='/quarks/:page' component={Quarks} />
             <Route exact path='/quark-types' component={QuarkTypes} />
+            <Route exact path='/gluon-types' component={GluonTypes} />
             <Route exact path='/add-quark' component={AddQuark} />
             <Route exact path='/add-quark-type' component={AddQuarkType} />
-            <Route exact path='/quarks/:page' component={Quarks} />
+            <Route exact path='/add-gluon-type' component={AddGluonType} />
           </Switch>
         </div>
       </div>

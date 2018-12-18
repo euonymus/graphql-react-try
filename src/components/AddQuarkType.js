@@ -100,7 +100,7 @@ class AddQuarkType extends Component {
           variables={{ name, image_path, name_prop, start_prop, end_prop, has_gender, sort }}
           onCompleted={() => this.props.history.push('/quark-types')}
           update={(store, { data: { createQuarkType } }) => {
-            const orderBy = 'created_at'
+            const orderBy = 'id'
             const data = store.readQuery({
               query: FEED_QUERY,
               variables: { orderBy }
