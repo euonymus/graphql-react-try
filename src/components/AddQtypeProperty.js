@@ -43,8 +43,8 @@ class AddQtypeProperty extends Component {
     return (
       <div>
         <div className="flex flex-column mt3">
-          Quark Type: <InputQuarkTypes onChange={value => this.setState( {value} )}/>
-          Quark Property: <InputQuarkProperties onChange={value => this.setState( {value} )}/>
+          Quark Type: <InputQuarkTypes onChange={quark_type_id => this.setState( {quark_type_id} )}/>
+          Quark Property: <InputQuarkProperties onChange={quark_property_id => this.setState( {quark_property_id} )}/>
           <input
             onChange={e => this.setState({is_required: !is_required})}
             type="checkbox"

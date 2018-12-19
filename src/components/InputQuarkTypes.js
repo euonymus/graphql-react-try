@@ -13,9 +13,13 @@ class InputQuarkTypes extends Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.defaultValue && !prevState.value) {
-      nextProps.onChange(nextProps.defaultValue)
-      return { value: nextProps.defaultValue }
+    if (!prevState.value) {
+      let value = 1
+      if (nextProps.defaultValue) {
+        value = nextProps.defaultValue
+      }
+      nextProps.onChange(value)
+      return { value }
     }
     return null
   }
@@ -29,9 +33,9 @@ class InputQuarkTypes extends Component {
            if (data.quarkTypes.length === 0) return 'No Data for this Selectbox'
            
            return (
-           <select defaultValue={this.props.defaultValue} onChange={this._onChange}>
-             {data.quarkTypes.map((quark_type, index) => (
-               <option key={quark_type.id} value={quark_type.id}>{quark_type.id}: {quark_type.name}</option>
+           <select value={this.props.defaultValue} onChange={this._onChange}>
+             {data.quarkTypes.map((data, index) => (
+               <option key={data.id} value={data.id}>{data.id}: {data.name}</option>
              ))}
            </select>
            )
