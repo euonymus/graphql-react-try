@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Mutation } from 'react-apollo'
 import gql from 'graphql-tag'
-import { FEED_QUERY } from './QuarkTypes'
+import { QUARK_TYPES_QUERY } from './QuarkTypes'
 
 const POST_MUTATION = gql`
   mutation PostMutation(
@@ -102,12 +102,12 @@ class AddQuarkType extends Component {
           update={(store, { data: { createQuarkType } }) => {
             const orderBy = 'id'
             const data = store.readQuery({
-              query: FEED_QUERY,
+              query: QUARK_TYPES_QUERY,
               variables: { orderBy }
             })
             data.quarkTypes.unshift(createQuarkType)
             store.writeQuery({
-              query: FEED_QUERY,
+              query: QUARK_TYPES_QUERY,
               data,
               variables: { orderBy }
             })

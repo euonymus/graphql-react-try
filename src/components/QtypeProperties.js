@@ -1,45 +1,51 @@
 import React, { Component, Fragment } from 'react'
-import QuarkProperty from './QuarkProperty'
+import QtypeProperty from './QtypeProperty'
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
 
-export const QUARK_PROPERTIES_QUERY = gql`
+export const QTYPE_PROPERTIES_QUERY = gql`
   query FeedQuery($orderBy: String) {
-    quarkProperties(orderBy: $orderBy) {
+    qtypeProperties(orderBy: $orderBy) {
       id
-      name
-      caption
-      captionJa
       createdAt
+      quarkType {
+        id
+        name
+      }
+      quarkProperty {
+        id
+        name
+      }
     }
   }
 `
 
-class QuarkProperties extends Component {
+class QtypeProperties extends Component {
   _getQueryVariables = () => {
     const orderBy = 'id'
+    // const orderBy = 'sort'
     return { orderBy }
   }
 
-  _getQuarkPropertiesToRender = data => {
-    return data.quarkProperties
+  _getQtypePropertiesToRender = data => {
+    return data.qtypeProperties
   }
 
   render() {
     return (
-      <Query query={QUARK_PROPERTIES_QUERY} variables={this._getQueryVariables()}>
+      <Query query={QTYPE_PROPERTIES_QUERY} variables={this._getQueryVariables()}>
         {({ loading, error, data }) => {
            if (loading) return <div>Fetching</div>
            if (error) return <div>Error</div>
-           if (data.quarkProperties.length === 0) return <div>No Data</div>
+           if (data.qtypeProperties.length === 0) return <div>No Data</div>
 
-           const quarkPropertiesToRender = this._getQuarkPropertiesToRender(data)
+           const qtypePropertiesToRender = this._getQtypePropertiesToRender(data)
            const pageIndex = 0
 
            return (
              <Fragment>
-               {quarkPropertiesToRender.map((quark_property, index) => (
-                 <QuarkProperty
+               {qtypePropertiesToRender.map((quark_property, index) => (
+                 <QtypeProperty
                    key={quark_property.id}
                    quark_property={quark_property}
                    index={index + pageIndex}
@@ -52,4 +58,4 @@ class QuarkProperties extends Component {
     )
   }
 }
-export default QuarkProperties
+export default QtypeProperties

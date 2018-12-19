@@ -3,7 +3,7 @@ import QuarkType from './QuarkType'
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
 
-export const FEED_QUERY = gql`
+export const QUARK_TYPES_QUERY = gql`
   query FeedQuery($orderBy: String) {
     quarkTypes(orderBy: $orderBy) {
       id
@@ -27,7 +27,7 @@ class QuarkTypes extends Component {
 
   render() {
     return (
-      <Query query={FEED_QUERY} variables={this._getQueryVariables()}>
+      <Query query={QUARK_TYPES_QUERY} variables={this._getQueryVariables()}>
         {({ loading, error, data }) => {
            if (loading) return <div>Fetching</div>
            if (error) return <div>Error</div>

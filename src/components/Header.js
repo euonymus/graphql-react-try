@@ -9,6 +9,10 @@ class Header extends Component {
     return (
       <div className="flex pa1 justify-between nowrap orange">
         <div className="flex flex-fixed black">
+          <Link to="/qtype-properties" className="ml1 no-underline black">
+            qtype properties
+          </Link>
+          <div className="ml1">|</div>
           <Link to="/" className="ml1 no-underline black">
             new
           </Link>
@@ -36,14 +40,18 @@ class Header extends Component {
           {authToken && (
              <div className="flex">
                <div className="ml1">|</div>
-               <Link to="/create" className="ml1 no-underline black">
-                 submit
-               </Link>
-               <div className="ml1">|</div>
                <Link to="/add-quark" className="ml1 no-underline black">
                  add quark
                </Link>
+               <div className="ml1">|</div>
+               <Link to="/add-qtype-property" className="ml1 no-underline black">
+                 add qtype_property
+               </Link>
 {/*
+               <div className="ml1">|</div>
+               <Link to="/create" className="ml1 no-underline black">
+                 submit
+               </Link>
                <div className="ml1">|</div>
                <Link to="/add-quark-type" className="ml1 no-underline black">
                  add quark_type
@@ -51,10 +59,6 @@ class Header extends Component {
                <div className="ml1">|</div>
                <Link to="/add-gluon-type" className="ml1 no-underline black">
                  add gluon_type
-               </Link>
-               <div className="ml1">|</div>
-               <Link to="/add-quark-property" className="ml1 no-underline black">
-                 add quark_property
                </Link>
 */}
              </div>
