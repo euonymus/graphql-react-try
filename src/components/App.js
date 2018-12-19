@@ -13,6 +13,7 @@ import GluonTypes from './GluonTypes'
 import QuarkProperties from './QuarkProperties'
 import QtypeProperties from './QtypeProperties'
 import QpropertyGtypes from './QpropertyGtypes'
+import QpropertyTypes from './QpropertyTypes'
 
 import AddQuark from './AddQuark'
 import AddQuarkType from './AddQuarkType'
@@ -20,6 +21,7 @@ import AddGluonType from './AddGluonType'
 import AddQuarkProperty from './AddQuarkProperty'
 import AddQtypeProperty from './AddQtypeProperty'
 import AddQpropertyGtype from './AddQpropertyGtype'
+import AddQpropertyType from './AddQpropertyType'
 
 class App extends Component {
   render() {
@@ -42,6 +44,7 @@ class App extends Component {
             <Route exact path='/quark-properties' component={QuarkProperties} />
             <Route exact path='/qtype-properties' component={QtypeProperties} />
             <Route exact path='/qproperty-gtypes' component={QpropertyGtypes} />
+            <Route exact path='/qproperty-types' component={QpropertyTypes} />
 
             <Route exact path='/add-quark' component={AddQuark} />
             <Route exact path='/add-quark-type' component={AddQuarkType} />
@@ -49,7 +52,8 @@ class App extends Component {
             <Route exact path='/add-quark-property' component={AddQuarkProperty} />
             <Route exact path='/add-qtype-property' component={AddQtypeProperty} />
             <Route exact path='/add-qproperty-gtype' component={AddQpropertyGtype} />
-            
+            <Route exact path='/add-qproperty-type' component={AddQpropertyType} />
+
           </Switch>
         </div>
       </div>

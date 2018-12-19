@@ -21,10 +21,14 @@ class Header extends Component {
             search
           </Link>
           <div className="ml1">|</div>
+          <Link to="/qproperty-types" className="ml1 no-underline black">
+            qproperty types
+          </Link>
+{/*
+          <div className="ml1">|</div>
           <Link to="/qproperty-gtypes" className="ml1 no-underline black">
             qproperty gtypes
           </Link>
-{/*
           <div className="ml1">|</div>
           <Link to="/qtype-properties" className="ml1 no-underline black">
             qtype properties
@@ -48,10 +52,14 @@ class Header extends Component {
                  add quark
                </Link>
                <div className="ml1">|</div>
+               <Link to="/add-qproperty-type" className="ml1 no-underline black">
+                 add qproperty_type
+               </Link>
+{/*
+               <div className="ml1">|</div>
                <Link to="/add-qproperty-gtype" className="ml1 no-underline black">
                  add qproperty_gtype
                </Link>
-{/*
                <div className="ml1">|</div>
                <Link to="/add-qtype-property" className="ml1 no-underline black">
                  add qtype_property
