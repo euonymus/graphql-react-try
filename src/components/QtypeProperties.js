@@ -7,6 +7,7 @@ export const QTYPE_PROPERTIES_QUERY = gql`
   query FeedQuery($orderBy: String) {
     qtypeProperties(orderBy: $orderBy) {
       id
+      isRequired
       createdAt
       quarkType {
         id
@@ -44,10 +45,10 @@ class QtypeProperties extends Component {
 
            return (
              <Fragment>
-               {qtypePropertiesToRender.map((quark_property, index) => (
+               {qtypePropertiesToRender.map((qtype_property, index) => (
                  <QtypeProperty
-                   key={quark_property.id}
-                   quark_property={quark_property}
+                   key={qtype_property.id}
+                   qtype_property={qtype_property}
                    index={index + pageIndex}
                  />
                ))}

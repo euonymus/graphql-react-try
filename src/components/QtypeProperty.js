@@ -10,7 +10,7 @@ class QtypeProperty extends Component {
         </div>
         <div className="ml1">
           <div>
-            {this.props.qtype_property.id} {this.props.qtype_property.quark_type.name} ({this.props.qtype_property.quark_property.name})
+            {this.props.qtype_property.id} {this.props.qtype_property.quarkType.name} - {this.props.qtype_property.quarkProperty.name} ({this.props.qtype_property.isRequired ? 'Required' : 'Not Required'})
           </div>
           <div className="f6 lh-copy gray">
             {timeDifferenceForDate(this.props.qtype_property.createdAt)}

@@ -19,6 +19,7 @@ const POST_MUTATION = gql`
     ) {
       id
       createdAt
+      isRequired
       quarkType {
         id
         name

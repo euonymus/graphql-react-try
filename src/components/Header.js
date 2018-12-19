@@ -60,6 +60,10 @@ class Header extends Component {
                <Link to="/add-gluon-type" className="ml1 no-underline black">
                  add gluon_type
                </Link>
+               <div className="ml1">|</div>
+               <Link to="/add-quark-property" className="ml1 no-underline black">
+                 add quark_property
+               </Link>
 */}
              </div>
           )}
