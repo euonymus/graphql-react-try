@@ -31,7 +31,7 @@ class InputQuarkProperties extends Component {
            return (
            <select defaultValue={this.props.defaultValue} onChange={this._onChange}>
              {data.quarkProperties.map((quark_property, index) => (
-               <option key={quark_property.id} value={quark_property.id}>{quark_property.name}</option>
+               <option key={quark_property.id} value={quark_property.id}>{quark_property.id}: {quark_property.name}</option>
              ))}
            </select>
            )
