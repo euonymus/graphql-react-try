@@ -9,10 +9,6 @@ class Header extends Component {
     return (
       <div className="flex pa1 justify-between nowrap orange">
         <div className="flex flex-fixed black">
-          <Link to="/qtype-properties" className="ml1 no-underline black">
-            qtype properties
-          </Link>
-          <div className="ml1">|</div>
           <Link to="/" className="ml1 no-underline black">
             new
           </Link>
@@ -24,7 +20,15 @@ class Header extends Component {
           <Link to="/search" className="ml1 no-underline black">
             search
           </Link>
+          <div className="ml1">|</div>
+          <Link to="/qproperty-gtypes" className="ml1 no-underline black">
+            qproperty gtypes
+          </Link>
 {/*
+          <div className="ml1">|</div>
+          <Link to="/qtype-properties" className="ml1 no-underline black">
+            qtype properties
+          </Link>
           <Link to="/quark-types" className="ml1 no-underline black">
             quark types
           </Link>
@@ -44,10 +48,14 @@ class Header extends Component {
                  add quark
                </Link>
                <div className="ml1">|</div>
+               <Link to="/add-qproperty-gtype" className="ml1 no-underline black">
+                 add qproperty_gtype
+               </Link>
+{/*
+               <div className="ml1">|</div>
                <Link to="/add-qtype-property" className="ml1 no-underline black">
                  add qtype_property
                </Link>
-{/*
                <div className="ml1">|</div>
                <Link to="/create" className="ml1 no-underline black">
                  submit

@@ -3,6 +3,8 @@ import { timeDifferenceForDate } from '../utils'
 
 class QuarkProperty extends Component {
   render() {
+    const { data } = this.props
+
     return (
       <div className="flex mt2 items-start">
         <div className="flex items-center">
@@ -10,10 +12,10 @@ class QuarkProperty extends Component {
         </div>
         <div className="ml1">
           <div>
-            {this.props.quark_property.id} {this.props.quark_property.name} ({this.props.quark_property.caption})
+            {data.id} {data.name} ({data.caption})
           </div>
           <div className="f6 lh-copy gray">
-            {timeDifferenceForDate(this.props.quark_property.createdAt)}
+            {timeDifferenceForDate(data.createdAt)}
           </div>
         </div>
       </div>

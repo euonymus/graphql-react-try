@@ -3,7 +3,7 @@ import GluonType from './GluonType'
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
 
-export const FEED_QUERY = gql`
+export const GLUON_TYPES_QUERY = gql`
   query FeedQuery($orderBy: String) {
     gluonTypes(orderBy: $orderBy) {
       id
@@ -15,19 +15,13 @@ export const FEED_QUERY = gql`
 `
 
 class GluonTypes extends Component {
-  _getQueryVariables = () => {
-    const orderBy = 'id'
-    // const orderBy = 'sort'
-    return { orderBy }
-  }
-
   _getGluonTypesToRender = data => {
     return data.gluonTypes
   }
 
   render() {
     return (
-      <Query query={FEED_QUERY} variables={this._getQueryVariables()}>
+      <Query query={GLUON_TYPES_QUERY} variables={{ orderBy: 'id' }}>
         {({ loading, error, data }) => {
            if (loading) return <div>Fetching</div>
            if (error) return <div>Error</div>
@@ -38,10 +32,10 @@ class GluonTypes extends Component {
 
            return (
              <Fragment>
-               {gluonTypesToRender.map((gluon_type, index) => (
+               {gluonTypesToRender.map((data, index) => (
                  <GluonType
-                   key={gluon_type.id}
-                   gluon_type={gluon_type}
+                   key={data.id}
+                   data={data}
                    index={index + pageIndex}
                  />
                ))}

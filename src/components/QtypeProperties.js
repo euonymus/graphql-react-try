@@ -45,10 +45,10 @@ class QtypeProperties extends Component {
 
            return (
              <Fragment>
-               {qtypePropertiesToRender.map((qtype_property, index) => (
+               {qtypePropertiesToRender.map((data, index) => (
                  <QtypeProperty
-                   key={qtype_property.id}
-                   qtype_property={qtype_property}
+                   key={data.id}
+                   data={data}
                    index={index + pageIndex}
                  />
                ))}

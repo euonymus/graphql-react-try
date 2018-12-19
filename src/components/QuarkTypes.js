@@ -15,19 +15,13 @@ export const QUARK_TYPES_QUERY = gql`
 `
 
 class QuarkTypes extends Component {
-  _getQueryVariables = () => {
-    const orderBy = 'id'
-    // const orderBy = 'sort'
-    return { orderBy }
-  }
-
   _getQuarkTypesToRender = data => {
     return data.quarkTypes
   }
 
   render() {
     return (
-      <Query query={QUARK_TYPES_QUERY} variables={this._getQueryVariables()}>
+      <Query query={QUARK_TYPES_QUERY} variables={{ orderBy: 'id' }}>
         {({ loading, error, data }) => {
            if (loading) return <div>Fetching</div>
            if (error) return <div>Error</div>
@@ -38,10 +32,10 @@ class QuarkTypes extends Component {
 
            return (
              <Fragment>
-               {quarkTypesToRender.map((quark_type, index) => (
+               {quarkTypesToRender.map((data, index) => (
                  <QuarkType
-                   key={quark_type.id}
-                   quark_type={quark_type}
+                   key={data.id}
+                   data={data}
                    index={index + pageIndex}
                  />
                ))}

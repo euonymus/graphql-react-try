@@ -16,18 +16,13 @@ export const QUARK_PROPERTIES_QUERY = gql`
 `
 
 class QuarkProperties extends Component {
-  _getQueryVariables = () => {
-    const orderBy = 'id'
-    return { orderBy }
-  }
-
   _getQuarkPropertiesToRender = data => {
     return data.quarkProperties
   }
 
   render() {
     return (
-      <Query query={QUARK_PROPERTIES_QUERY} variables={this._getQueryVariables()}>
+      <Query query={QUARK_PROPERTIES_QUERY} variables={{ orderBy: 'id' }}>
         {({ loading, error, data }) => {
            if (loading) return <div>Fetching</div>
            if (error) return <div>Error</div>
@@ -38,10 +33,10 @@ class QuarkProperties extends Component {
 
            return (
              <Fragment>
-               {quarkPropertiesToRender.map((quark_property, index) => (
+               {quarkPropertiesToRender.map((data, index) => (
                  <QuarkProperty
-                   key={quark_property.id}
-                   quark_property={quark_property}
+                   key={data.id}
+                   data={data}
                    index={index + pageIndex}
                  />
                ))}

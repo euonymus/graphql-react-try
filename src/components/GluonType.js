@@ -3,6 +3,8 @@ import { timeDifferenceForDate } from '../utils'
 
 class GluonType extends Component {
   render() {
+    const { data } = this.props
+
     return (
       <div className="flex mt2 items-start">
         <div className="flex items-center">
@@ -10,10 +12,10 @@ class GluonType extends Component {
         </div>
         <div className="ml1">
           <div>
-            {this.props.gluon_type.id} {this.props.gluon_type.name} ({this.props.gluon_type.sort})
+            {data.id} {data.name} ({data.sort})
           </div>
           <div className="f6 lh-copy gray">
-            {timeDifferenceForDate(this.props.gluon_type.createdAt)}
+            {timeDifferenceForDate(data.createdAt)}
           </div>
         </div>
       </div>

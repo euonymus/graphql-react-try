@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Mutation } from 'react-apollo'
 import gql from 'graphql-tag'
-import { FEED_QUERY } from './GluonTypes'
+import { GLUON_TYPES_QUERY } from './GluonTypes'
 
 const POST_MUTATION = gql`
   mutation PostMutation(
@@ -72,12 +72,12 @@ class AddGluonType extends Component {
           update={(store, { data: { createGluonType } }) => {
             const orderBy = 'id'
             const data = store.readQuery({
-              query: FEED_QUERY,
+              query: GLUON_TYPES_QUERY,
               variables: { orderBy }
             })
             data.gluonTypes.unshift(createGluonType)
             store.writeQuery({
-              query: FEED_QUERY,
+              query: GLUON_TYPES_QUERY,
               data,
               variables: { orderBy }
             })

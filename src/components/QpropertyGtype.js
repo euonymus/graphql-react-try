@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { timeDifferenceForDate } from '../utils'
 
-class QuarkType extends Component {
+class QpropertyGtype extends Component {
+
   render() {
     const { data } = this.props
 
@@ -12,7 +13,7 @@ class QuarkType extends Component {
         </div>
         <div className="ml1">
           <div>
-            {data.id} {data.name} ({data.sort})
+            {data.id} {data.quarkProperty.name} - {data.gluonType.name} ({data.side})
           </div>
           <div className="f6 lh-copy gray">
             {timeDifferenceForDate(data.createdAt)}
@@ -22,4 +23,4 @@ class QuarkType extends Component {
     )
   }
 }
-export default QuarkType
+export default QpropertyGtype

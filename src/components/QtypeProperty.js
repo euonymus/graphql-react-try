@@ -3,6 +3,7 @@ import { timeDifferenceForDate } from '../utils'
 
 class QtypeProperty extends Component {
   render() {
+    const { data } = this.props
     return (
       <div className="flex mt2 items-start">
         <div className="flex items-center">
@@ -10,10 +11,10 @@ class QtypeProperty extends Component {
         </div>
         <div className="ml1">
           <div>
-            {this.props.qtype_property.id} {this.props.qtype_property.quarkType.name} - {this.props.qtype_property.quarkProperty.name} ({this.props.qtype_property.isRequired ? 'Required' : 'Not Required'})
+            {data.id} {data.quarkType.name} - {data.quarkProperty.name} ({data.isRequired ? 'Required' : 'Not Required'})
           </div>
           <div className="f6 lh-copy gray">
-            {timeDifferenceForDate(this.props.qtype_property.createdAt)}
+            {timeDifferenceForDate(data.createdAt)}
           </div>
         </div>
       </div>
