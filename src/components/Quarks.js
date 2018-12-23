@@ -5,7 +5,7 @@ import gql from 'graphql-tag'
 
 import { QUARKS_PER_PAGE } from '../constants'
 
-export const FEED_QUERY = gql`
+export const QUARKS_QUERY = gql`
   query FeedQuery($first: Int, $skip: Int, $orderBy: String) {
     quarks(first: $first, skip: $skip, orderBy: $orderBy) {
       id
@@ -23,30 +23,23 @@ export const FEED_QUERY = gql`
 
 class Quarks extends Component {
   _getQueryVariables = () => {
-    const isNewPage = this.props.location.pathname.includes('new')
     const page = parseInt(this.props.match.params.page, 10)
 
-    const skip = isNewPage ? (page - 1) * QUARKS_PER_PAGE : 0
-    const first = isNewPage ? QUARKS_PER_PAGE : 100
-    const orderBy = isNewPage ? 'created_at' : null
+    const skip = (page - 1) * QUARKS_PER_PAGE
+    const first = QUARKS_PER_PAGE
+    const orderBy = 'created_at'
     return { first, skip, orderBy }
   }
 
   _getDatasToRender = data => {
-    const isNewPage = this.props.location.pathname.includes('new')
-    if (isNewPage) {
-      return data.quarks
-    }
-    const rankedQuarks = data.quarks.slice()
-    // rankedQuarks.sort((l1, l2) => l2.votes.length - l1.votes.length)
-    return rankedQuarks
+    return data.quarks
   }
 
   _nextPage = data => {
     const page = parseInt(this.props.match.params.page, 10)
     if (page < data.quarkCount / QUARKS_PER_PAGE) {
       const nextPage = page + 1
-      this.props.history.push(`/new/${nextPage}`)
+      this.props.history.push(`/quarks/${nextPage}`)
     }
   }
 
@@ -54,20 +47,19 @@ class Quarks extends Component {
     const page = parseInt(this.props.match.params.page, 10)
     if (page > 1) {
       const previousPage = page - 1
-      this.props.history.push(`/new/${previousPage}`)
+      this.props.history.push(`/quarks/${previousPage}`)
     }
   }
   
   render() {
     return (
-      <Query query={FEED_QUERY} variables={this._getQueryVariables()}>
+      <Query query={QUARKS_QUERY} variables={this._getQueryVariables()}>
         {({ loading, error, data }) => {
            if (loading) return <div>Fetching</div>
            if (error) return <div>Error</div>
            if (data.quarkCount === 0) return <div>No Data</div>
 
            const datasToRender = this._getDatasToRender(data)
-           const isNewPage = this.props.location.pathname.includes('new')
            const pageIndex = this.props.match.params.page
            ? (this.props.match.params.page - 1) * QUARKS_PER_PAGE
            : 0
@@ -81,7 +73,7 @@ class Quarks extends Component {
                    index={index + pageIndex}
                  />
                ))}
-               {isNewPage && (
+               {(
                   <div className="flex ml4 mv3 gray">
                     <div className="pointer mr2" onClick={this._previousPage}>
                       Previous
