@@ -18,6 +18,10 @@ export const QUARKS_QUERY = gql`
         id
         username
       }
+      quarkType {
+        id
+        name
+      }
     }
     quarkCount
   }

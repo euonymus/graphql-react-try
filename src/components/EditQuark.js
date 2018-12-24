@@ -237,6 +237,8 @@ class EditQuark extends Component {
               query: QUARKS_QUERY,
               variables: { first, skip, orderBy }
             })
+            console.log(data)
+            console.log(updateQuark)
             data.quarks.unshift(updateQuark)
             store.writeQuery({
               query: QUARKS_QUERY,
