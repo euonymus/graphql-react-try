@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import { timeDifferenceForDate } from '../utils'
 
 class Quark extends Component {
@@ -13,7 +14,7 @@ class Quark extends Component {
         </div>
         <div className="ml1">
           <div>
-            {data.name} ({data.imagePath})
+            {data.name} ({data.imagePath}) <Link to={`/edit-quark/${data.id}`}>Edit</Link> <Link to={`/delete-quark/${data.id}`}>Delete</Link>
           </div>
           <div className="f6 lh-copy gray">
             {timeDifferenceForDate(data.createdAt)}
