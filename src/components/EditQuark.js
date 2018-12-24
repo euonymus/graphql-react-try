@@ -237,9 +237,13 @@ class EditQuark extends Component {
               query: QUARKS_QUERY,
               variables: { first, skip, orderBy }
             })
-            console.log(data)
-            console.log(updateQuark)
-            data.quarks.unshift(updateQuark)
+            data.quarks = data.quarks.map( quark => {
+              if (quark.id === updateQuark.id) {
+                return updateQuark
+              }
+              return quark
+            })
+            // data.quarks.unshift(updateQuark)
             store.writeQuery({
               query: QUARKS_QUERY,
               data,
