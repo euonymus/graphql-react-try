@@ -13,7 +13,7 @@ class Quark extends Component {
         </div>
         <div className="ml1">
           <div>
-            {data.description} ({data.url})
+            {data.name} ({data.imagePath})
           </div>
           <div className="f6 lh-copy gray">
             {timeDifferenceForDate(data.createdAt)}

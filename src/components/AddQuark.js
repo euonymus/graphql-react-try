@@ -54,6 +54,10 @@ const POST_MUTATION = gql`
         id
         name
       }
+      postedBy {
+        id
+        username
+      }
     }
   }  
 `
@@ -105,14 +109,14 @@ class AddQuark extends Component {
             className="mb2"
             value={start}
             onChange={e => this.setState({ start: e.target.value })}
-            type="text"
+            type="date"
             placeholder="A start for the quark"
           />
           <input
             className="mb2"
             value={end}
             onChange={e => this.setState({ end: e.target.value })}
-            type="text"
+            type="date"
             placeholder="A end for the quark"
           />
           <input

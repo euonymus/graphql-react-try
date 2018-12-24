@@ -10,8 +10,10 @@ export const QUARKS_QUERY = gql`
     quarks(first: $first, skip: $skip, orderBy: $orderBy) {
       id
       createdAt
-      url
+      name
+      imagePath
       description
+      url
       postedBy {
         id
         username
