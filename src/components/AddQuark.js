@@ -165,7 +165,8 @@ class AddQuark extends Component {
         </div>
         <Mutation
           mutation={POST_MUTATION}
-          variables={{ description, url }}
+          variables={{ name, image_path, description, start, end, start_accuracy, end_accuracy, is_momentary, url, affiliate,
+                       is_private, is_exclusive, quark_type_id }}
           onCompleted={() => this.props.history.push('/quarks/1')}
           update={(store, { data: { createQuark } }) => {
             const first = QUARKS_PER_PAGE
