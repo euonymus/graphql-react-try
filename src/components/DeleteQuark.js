@@ -36,13 +36,8 @@ class DeleteQuark extends Component {
               query: QUARKS_QUERY,
               variables: { first, skip, orderBy }
             })
-            data.quarks = data.quarks.map( quark => {
-              if (quark.id === deleteQuark.id) {
-                return deleteQuark
-              }
-              return quark
-            })
-            // data.quarks.unshift(deleteQuark)
+
+            data.quarks = data.quarks.filter( quark => quark.id !== id )
             store.writeQuery({
               query: QUARKS_QUERY,
               data,
