@@ -16,6 +16,7 @@ import QpropertyTypes from './QpropertyTypes'
 
 import AddQuark from './AddQuark'
 import EditQuark from './EditQuark'
+import DeleteQuark from './DeleteQuark'
 import AddQuarkType from './AddQuarkType'
 import AddGluonType from './AddGluonType'
 import AddQuarkProperty from './AddQuarkProperty'
@@ -47,6 +48,7 @@ class App extends Component {
 
             <Route exact path='/add-quark' component={AddQuark} />
             <Route exact path='/edit-quark/:id' component={EditQuark} />
+            <Route exact path='/delete-quark/:id' component={DeleteQuark} />
             <Route exact path='/add-quark-type' component={AddQuarkType} />
             <Route exact path='/add-gluon-type' component={AddGluonType} />
             <Route exact path='/add-quark-property' component={AddQuarkProperty} />
