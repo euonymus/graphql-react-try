@@ -14,7 +14,7 @@ class Quark extends Component {
         </div>
         <div className="ml1">
           <div>
-            {data.name} ({data.imagePath}) <Link to={`/edit-quark/${data.id}`}>Edit</Link> <Link to={`/delete-quark/${data.id}`}>Delete</Link>
+            {data.name} ({data.imagePath}) <Link to={`/quark/${data.id}`}>Show</Link> <Link to={`/edit-quark/${data.id}`}>Edit</Link> <Link to={`/delete-quark/${data.id}`}>Delete</Link>
           </div>
           <div className="f6 lh-copy gray">
             {timeDifferenceForDate(data.createdAt)}

@@ -6,6 +6,7 @@ import CreateLink from './CreateLink'
 import Login from './Login'
 import Search from './Search'
 
+import QuarkDetail from './QuarkDetail'
 import Quarks from './Quarks'
 import QuarkTypes from './QuarkTypes'
 import GluonTypes from './GluonTypes'
@@ -38,6 +39,7 @@ class App extends Component {
             <Route exact path='/' render={() => <Redirect to='/quarks/1' />} />
             <Route exact path='/login' component={Login} />
 
+            <Route exact path='/quark/:id' component={QuarkDetail} />
             <Route exact path='/quarks/:page' component={Quarks} />
             <Route exact path='/quark-types' component={QuarkTypes} />
             <Route exact path='/gluon-types' component={GluonTypes} />
