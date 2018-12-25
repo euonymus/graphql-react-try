@@ -61,6 +61,7 @@ class QuarkDetail extends Component {
                  {data.quark.isPrivate}<br />
                  {data.quark.postedBy.username}<br />
                  {data.quark.quarkType.name}<br />
+                 {timeDifferenceForDate(data.quark.createdAt)}<br />
                </p>
                <div><Link to={`/add-gluon/${id}`}>Add Gluon</Link></div>
              </div>
